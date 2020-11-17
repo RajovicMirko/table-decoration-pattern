@@ -40,7 +40,6 @@ function App() {
             );
           }}
         ></Fetcher>
-
         <Table {...{ title: "Fixed table data", headers, data }} />
       </Suspense>
     </div>
