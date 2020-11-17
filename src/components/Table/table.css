@@ -49,6 +49,10 @@
 .table-wrapper table thead th {
   text-align: left;
   padding: 0.4rem 0.2rem;
+  cursor: pointer;
+}
+.table-wrapper table thead th:hover {
+  background-color: var(--gray-opacity);
 }
 
 .table-wrapper table tbody {
