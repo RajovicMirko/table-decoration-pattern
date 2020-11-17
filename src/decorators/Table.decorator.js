@@ -14,7 +14,6 @@ const TableDecorator = () => (WrappedComponent) => {
       super(props);
       this.state = {
         data: props.data,
-        title: props.title,
         filteredData: [],
         searchValue: "",
         sortConfig: {
@@ -44,7 +43,6 @@ const TableDecorator = () => (WrappedComponent) => {
     render() {
       const passPropsToWrappedComponent = {
         ...this.props,
-        title: this.state.title,
         data: this.state.filteredData,
         pagination: this.state.pagination,
         handleUpdate: this.handleTableChange,
