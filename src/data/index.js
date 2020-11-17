@@ -1,4 +1,4 @@
-export const data = Array.from({ length: 200000 }, (val, i) => {
+export const data = Array.from({ length: 20000 }, (val, i) => {
   const num = i + 1;
 
   return {

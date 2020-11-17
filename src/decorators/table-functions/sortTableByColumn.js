@@ -1,26 +1,26 @@
-const sortText = (sortAsc, valA, valB) => {
-  if (valA < valB) return sortAsc ? -1 : 1;
-  if (valA > valB) return sortAsc ? 1 : -1;
-  return 0;
-};
-
-const sortNumbersBooleans = (sortAsc, valA, valB) => {
-  return sortAsc ? valA - valB : valB - valA;
-};
-
 export function sortTableByColumn(sortConfig, data) {
-  const newData = Object.assign([], data);
-  const { sortAsc, lastKey: key } = sortConfig;
-
-  newData.sort((a, b) => {
-    const valA = a[key];
-    const valB = b[key];
-    const tryParseValue = Number(valA);
-
-    return isNaN(tryParseValue)
-      ? sortText(sortAsc, valA, valB)
-      : sortNumbersBooleans(sortAsc, valA, valB);
-  });
-
-  return newData;
+  let newData = Object.assign([], data);
+  const { sortAsc, lastKey } = sortConfig;
+  return bubbleSortArrayOfObjects(sortAsc, lastKey, newData);
 }
+
+const test = (direction, valA, valB) => {
+  return direction ? valA > valB : valA < valB;
+};
+
+const bubbleSortArrayOfObjects = (direction, key, arr) => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let change = false;
+
+    for (let j = 0; j < arr.length - (i + 1); j++) {
+      if (test(direction, arr[j][key], arr[j + 1][key])) {
+        change = true;
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+
+    if (!change) break;
+  }
+
+  return arr;
+};
