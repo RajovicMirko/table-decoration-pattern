@@ -2,12 +2,11 @@ import { sortTableByColumn } from "./sortTableByColumn";
 import { searchTableData } from "./searchTableData";
 /**
  *
- * @payload {*} payload is object and has two attributes
+ * @payload { type: string, data: any} payload is object and has two attributes
  *    @type {string} - valid values ["search", "pagination", "sort"]
  *    @data {any} - valid values [ "searchString", "paginationObject", "columnIdString"]
  */
 
-// payload = { type: string, data: any}
 export const handleStateChangeByPayload = ([state, payload = null]) => {
   if (!payload) return state;
   const { type, data } = payload;
