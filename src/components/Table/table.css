@@ -103,6 +103,7 @@
 
 .table-wrapper .pagination-wrapper ul li {
   margin: 0 0.3rem;
+  font-size: 0.9rem;
   color: var(--gray);
   cursor: pointer;
 }
