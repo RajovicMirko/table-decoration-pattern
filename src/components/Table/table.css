@@ -1,0 +1,110 @@
+:root {
+  --primary: rgb(34, 143, 194);
+  --white: rgb(255, 255, 255);
+  --gray: rgba(190, 190, 190, 1);
+  --gray-opacity: rgba(190, 190, 190, 0.1);
+  --text-shadow-opacity: rgba(0, 0, 0, 0.4);
+}
+
+.table-wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.table-wrapper .table-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  color: var(--white);
+}
+
+.table-wrapper .table-banner span {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px var(--text-shadow-opacity);
+}
+
+.table-wrapper .table-banner input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper table thead {
+  border-bottom: 1px solid var(--gray-opacity);
+}
+
+.table-wrapper table thead th {
+  text-align: left;
+  padding: 0.4rem 0.2rem;
+}
+
+.table-wrapper table tbody {
+}
+
+.table-wrapper table tbody tr:nth-of-type(even) {
+  background-color: var(--gray-opacity);
+}
+
+.table-wrapper table tbody td {
+  padding: 0.3rem 0.2rem;
+  font-size: 0.9rem;
+}
+
+.table-wrapper .pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: var(--white);
+  text-shadow: 1px 1px 3px var(--text-shadow-opacity);
+}
+
+.table-wrapper .pagination-wrapper .pagination-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.table-wrapper .pagination-wrapper .pagination-left div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.table-wrapper .pagination-wrapper .pagination-left div label {
+  line-height: 1;
+  margin-right: 0.3rem;
+}
+
+.table-wrapper .pagination-wrapper ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-wrapper .pagination-wrapper ul li {
+  margin: 0 0.3rem;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.table-wrapper .pagination-wrapper ul .active {
+  font-weight: bolder;
+  color: var(--white);
+}
