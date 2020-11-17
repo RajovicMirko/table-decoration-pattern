@@ -26,7 +26,14 @@ function App() {
         <Fetcher
           path="/users"
           render={(apiData) => {
-            if (!apiData.length) return <div>Loading...</div>;
+            if (!apiData) return <div>Loading...</div>;
+
+            const result = apiData.map((row) => ({
+              id: row.id,
+              name: row.name,
+              email: row.email,
+              address: `${row.address.street} ${row.address.suite}`,
+            }));
 
             return (
               apiData &&
@@ -34,7 +41,7 @@ function App() {
                 <Table
                   title="Api table data"
                   headers={apiHeaders}
-                  data={apiData}
+                  data={result}
                 />
               )
             );

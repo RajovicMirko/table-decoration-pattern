@@ -5,23 +5,16 @@ class Fetcher extends Component {
     super(props);
     this.url = "https://jsonplaceholder.typicode.com";
     this.state = {
-      apiData: [],
+      apiData: null,
     };
   }
 
-  async componentDidMount() {
-    const result = await fetch(this.url + this.props.path).then((res) =>
-      res.json()
-    );
-
-    this.setState({
-      apiData: result.map((row) => ({
-        id: row.id,
-        name: row.name,
-        email: row.email,
-        address: `${row.address.street} ${row.address.suite}`,
-      })),
-    });
+  componentDidMount() {
+    fetch(this.url + this.props.path)
+      .then((res) => res.json())
+      .then((apiData) => {
+        this.setState({ apiData });
+      });
   }
 
   render() {
